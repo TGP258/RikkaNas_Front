@@ -32,7 +32,7 @@ db.connect((err) => {
       id INT AUTO_INCREMENT PRIMARY KEY,
       device_name VARCHAR(255) NOT NULL,
       username VARCHAR(255) NOT NULL UNIQUE,
-      userrole INT NOT NULL,
+      userrole INT,
       account VARCHAR(255) NOT NULL UNIQUE,
       password VARCHAR(255) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
