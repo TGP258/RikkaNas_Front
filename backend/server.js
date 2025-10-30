@@ -27,12 +27,13 @@ db.connect((err) => {
     console.log('成功连接到MySQL数据库');
 
     // 创建用户表（如果不存在）
+    //要求非空可能导致该脚本无法运行
     const createTableQuery = `
     CREATE TABLE IF NOT EXISTS users (
       id INT AUTO_INCREMENT PRIMARY KEY,
       device_name VARCHAR(255) NOT NULL,
       username VARCHAR(255) NOT NULL UNIQUE,
-      userrole INT,
+      userrole INT, 
       account VARCHAR(255) NOT NULL UNIQUE,
       password VARCHAR(255) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
